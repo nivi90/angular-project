@@ -1,22 +1,22 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { AppComponent } from './app.component';
+import { HomeComponent } from './shared/components/home/home.component';
 
 
 const routes: Routes = [
   {
     path: '',
-    component: AppComponent,
+    component: HomeComponent,
   },
   {
     path: 'users',
-    loadChildren: () => import('./users/users.module').then(m => m.UsersModule)
+    loadChildren: () => import('./modules/users/users.module').then(m => m.UsersModule)
   },
   {
     path: 'albums',
-    loadChildren: () => import('./users/components/albums/albums.module').then(m => m.AlbumsModule)
+    loadChildren: () => import('./modules/albums/albums.module').then(m => m.AlbumsModule)
   },
-  
+
   {
     path: '**',
     redirectTo: '',

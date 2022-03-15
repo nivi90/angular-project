@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
-import { AddOrUpdateEmployeeComponent } from './components/add-or-update-employee/add-or-update-employee.component';
-import { IEmployee } from './models/employee';
-import { EmployeeService } from './services/employee.service';
+import { AddOrUpdateEmployeeComponent } from './shared/components/add-or-update-employee/add-or-update-employee.component';
+import { IEmployee } from './shared/models/employee';
+import { EmployeeService } from './shared/services/employee/employee.service';
 
 @Component({
   selector: 'app-root',

@@ -1,8 +1,9 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+
 import { environment } from '../../../../environments/environment';
-import {  Observable, throwError } from 'rxjs';
-import { map, catchError} from 'rxjs/operators';
+import { Observable, throwError } from 'rxjs';
+import { map, catchError } from 'rxjs/operators';
 import { IAlbum } from '../../models/album';
 
 @Injectable({
@@ -14,19 +15,20 @@ export class AlbumsService {
   constructor(
     private httpClient: HttpClient
   ) { }
+
   getAllAlbums(): Observable<Array<IAlbum>> {
     const requestUrl = `${this.baseUrl}/albums`;
     return this.httpClient.get<Array<IAlbum>>(requestUrl).pipe(
       map((albums) => {
+        console.log('the albums ',albums);
         return albums;
       }),
-    catchError(error => {
-      return throwError(error);
-    })
+      catchError(error => {
+        return throwError(error);
+      })
     );
 
   }
-
 
   getAlbumByUserId(userId: number): Observable<IAlbum> {
     const requestUrl = `${this.baseUrl}/albums/${userId}`;
@@ -34,9 +36,9 @@ export class AlbumsService {
       map((album) => {
         return album;
       }),
-    catchError(error => {
-      return throwError(error);
-    })
+      catchError(error => {
+        return throwError(error);
+      })
     );
 
 

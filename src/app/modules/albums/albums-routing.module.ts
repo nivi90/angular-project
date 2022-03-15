@@ -4,10 +4,10 @@ import { AlbumsComponent } from './albums.component';
 
 const routes: Routes = [
    {
-     path: 'albums',
+     path: '',
      component: AlbumsComponent
    },
-   
+
 ];
 
 @NgModule({

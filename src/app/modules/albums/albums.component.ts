@@ -9,12 +9,9 @@ import { AlbumsService } from 'src/app/shared/services/albums/albums.service';
   styleUrls: ['./albums.component.scss']
 })
 export class AlbumsComponent implements OnInit {
-  public displayedColumns: string[] = ['id','title','userId'];
+  public displayedColumns: string[] = ['id', 'title', 'userId'];
 
-  @Input() userId: number | undefined;
   public listOfAlbums: Array<IAlbum> = [];
-  getAllAlbums: any;
-
 
   constructor(
     private albumsService: AlbumsService,
@@ -24,19 +21,20 @@ export class AlbumsComponent implements OnInit {
   ngOnInit(): void {
     this.getAllAlbums();
   }
-  getAllUsers() {
+
+  getAllAlbums() {
+    console.log('the called');
     this.albumsService.getAllAlbums().subscribe((albums) => {
-      this.listOfAlbums= albums;
+      this.listOfAlbums = albums;
+      console.log('the listOfAlbums', this.listOfAlbums);
     }, error => {
       console.log('the error ', error)
     });
   }
 
-  
- 
-  navigateToAlbumsByUserId(album: IAlbum){
+  navigateToAlbumsByUserId(album: IAlbum) {
     this.router.navigate(['albums', album.id]);
-}
+  }
 
 
 }
