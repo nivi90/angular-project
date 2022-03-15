@@ -1,0 +1,23 @@
+<mat-toolbar>
+    <span (click)="navigateToHome()">
+    <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
+      <mat-icon>menu</mat-icon>
+    </button>
+    <span>Angular Training</span>
+  </span>
+    <span class="example-spacer"></span>
+    <button mat-button
+            class="example-icon favorite-icon"
+            aria-label="Example icon-button with heart icon"
+            (click)="navigateToUsers()">
+      <!-- <mat-icon>favorite</mat-icon> -->
+       users
+    </button>
+    <button mat-button
+           class="example-icon"
+           aria-label="Example icon-button with share icon"
+           (click)="navigateToPosts()">
+      <!-- <mat-icon>share</mat-icon> -->
+      Albums
+    </button>
+  </mat-toolbar>

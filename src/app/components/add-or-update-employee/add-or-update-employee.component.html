@@ -1,0 +1,41 @@
+<h2 mat-dialog-title>{{ isCreation ? 'Add Employee' : 'Update Employee'}}</h2>
+<mat-dialog-content class="mat-typography">
+  <section>
+    <mat-form-field class="example-full-width">
+      <mat-label>Name</mat-label>
+      <input matInput placeholder="EX. sai" [(ngModel)]="name">
+    </mat-form-field>
+    <mat-form-field class="example-full-width">
+      <mat-label>Age</mat-label>
+      <input  type="number" min="1" max="80" matInput placeholder="Ex. 20" [(ngModel)]="age">
+    </mat-form-field>
+    <mat-form-field class="example-full-width">
+      <mat-label>Salary</mat-label>
+      <input type="number" matInput min="1" placeholder="Ex. 20000" [(ngModel)]="salary">
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Position</mat-label>
+      <mat-select [(ngModel)]="position">
+        <mat-option *ngFor="let position of positions" [value]="position">
+          {{position}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Country</mat-label>
+      <mat-select [(ngModel)]="country">
+        <mat-option *ngFor="let country of countries" [value]="country">
+          {{country}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+  </section>
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+  <button mat-button mat-dialog-close>Cancel</button>
+  <button mat-raised-button color="primary" mat-dialog-close (click)="updateEmployee()">
+          {{isCreation ? 'Save' : 'Update'}}
+  </button>
+</mat-dialog-actions>

@@ -1,0 +1,20 @@
+<!--<mat-card>
+    <section class="list-of-employees">
+      <h1>List of Employees</h1>
+      <button mat-raised-button (click)="addEmployee()">Add Employee</button>
+    </section>
+     <ng-container *ngIf="employees && employees.length">
+       <app-list-of-employees [displayList]="displayedColumns"
+                              [employeeList]="employees"
+                              (updateEmployee)="update($event)"
+                              (deleteEmployee)="deleteEmployeeByIndex($event)">
+       </app-list-of-employees>
+     </ng-container>
+  </mat-card>-->
+<!-- <mat-card>header</mat-card> -->
+<section>
+  <app-header></app-header>
+  <router-outlet></router-outlet>
+</section>
+
+<!-- <mat-card>footer</mat-card> -->

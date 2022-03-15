@@ -1,0 +1,14 @@
+<mat-accordion>
+   <mat-expansion-panel>
+     <mat-expansion-panel-header>
+       <mat-panel-title>
+          {{post?. title}}
+       </mat-panel-title>
+       <mat-panel-description>
+         {{post?. body}}
+       </mat-panel-description>
+     </mat-expansion-panel-header>
+     <!-- <p>{{post?.id}} --- {{post?.userId}}</p> -->
+     <app-comment-list [postId]="post?.id"></app-comment-list>
+   </mat-expansion-panel>
+ </mat-accordion>

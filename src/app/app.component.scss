@@ -1,0 +1,9 @@
+.list-of-employees{
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+
+  button {
+    color: green;
+  }
+}

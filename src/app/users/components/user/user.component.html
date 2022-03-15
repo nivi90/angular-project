@@ -1,0 +1,9 @@
+<mat-card>
+  <mat-spinner *ngIf="isLoading"></mat-spinner>
+  <section *ngIf="!isLoading">
+    {{user | json}}
+  </section>
+  <ng-container *ngIf="!isLoading">
+     <app-post-list [userId]="userId"></app-post-list>
+  </ng-container>
+</mat-card>

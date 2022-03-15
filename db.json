@@ -1,0 +1,38 @@
+{
+  "employees": [
+    {
+      "id": 1,
+      "name": "chandra sekhar",
+      "age": 32,
+      "salary": 200000,
+      "country": "india",
+      "position": "senior manager"
+    },
+    {
+      "id": 9,
+      "name": "sai  k",
+      "age": 33,
+      "salary": 2045500,
+      "position": "Web Developer",
+      "country": "Greece"
+    },
+    {
+      "id": 3,
+      "name": "c ",
+      "age": 0,
+      "salary": 0,
+      "position": "",
+      "country": ""
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  }
+}
