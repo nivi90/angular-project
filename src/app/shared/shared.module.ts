@@ -8,8 +8,7 @@ import { AddOrUpdateEmployeeComponent } from './components/add-or-update-employe
 import { HomeComponent } from './components/home/home.component';
 import { MaterialModule } from './material.module';
 import { FormsModule } from '@angular/forms';
-
-
+import { SearchFilterPipe } from './pipes/search-filter/search-filter.pipe';
 
 @NgModule({
   declarations: [
@@ -18,7 +17,8 @@ import { FormsModule } from '@angular/forms';
     ListOfEmployeesComponent,
     LoginComponent,
     HeaderComponent,
-    HomeComponent
+    HomeComponent,
+    SearchFilterPipe
   ],
   imports: [
     CommonModule,
@@ -31,7 +31,8 @@ import { FormsModule } from '@angular/forms';
     ListOfEmployeesComponent,
     LoginComponent,
     HeaderComponent,
-    HomeComponent
+    HomeComponent,
+    SearchFilterPipe
   ]
 })
 export class SharedModule { }

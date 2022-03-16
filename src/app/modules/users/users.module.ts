@@ -9,6 +9,8 @@ import { CommentListComponent } from './components/comment-list/comment-list.com
 import { CommentComponent } from './components/comment/comment.component';
 import { MaterialModule } from '../../shared/material.module';
 import { UsersComponent } from './users.component';
+import { FormsModule } from '@angular/forms';
+import { SharedModule } from 'src/app/shared/shared.module';
 
 @NgModule({
   declarations: [
@@ -22,7 +24,9 @@ import { UsersComponent } from './users.component';
   imports: [
     CommonModule,
     UsersRoutingModule,
-    MaterialModule
+    MaterialModule,
+    FormsModule,
+    SharedModule
   ]
 })
 export class UsersModule { }

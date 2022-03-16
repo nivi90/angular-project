@@ -16,6 +16,8 @@ export class UsersComponent implements OnInit {
   public displayedColumns: string[] = ['id', 'name', 'username', 'email', 'address', 'phone', 'website', 'company'];
   public listOfUsers: Array<IUser> = [];
 
+  public searchField: string = '';
+
   constructor(
     private usersService: UsersService,
     private router: Router,
@@ -39,5 +41,9 @@ export class UsersComponent implements OnInit {
 
   concatAddress(address: IAddress): String {
     return `${address.street},${address.suite},${address.city},${address.zipcode}`;
+  }
+
+  clearSearchField(){
+     this.searchField = '';
   }
 }
