@@ -1,1 +1,13 @@
-<p>home works!</p>
+<mat-card>
+    <section class="list-of-employees">
+      <h1>List of Employees</h1>
+      <button mat-raised-button (click)="addEmployee()">Add Employee</button>
+    </section>
+     <ng-container *ngIf="employees && employees.length">
+       <app-list-of-employees [displayList]="displayedColumns"
+                              [employeeList]="employees"
+                              (updateEmployee)="update($event)"
+                              (deleteEmployee)="deleteEmployeeByIndex($event)">
+       </app-list-of-employees>
+     </ng-container>
+  </mat-card>

@@ -1,3 +1,13 @@
 mat-form-field {
-    width: 100%;
-  }
+  width: 100%;
+}
+
+.error-msg {
+  display: block;
+  position: absolute;
+  bottom: -2em;
+}
+
+.error-msg div {
+  color: #ff0000;
+}

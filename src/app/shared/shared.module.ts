@@ -1,5 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+
 import { HeaderComponent } from './components/header/header.component';
 import { LoginComponent } from './components/login/login.component';
 import { ListOfEmployeesComponent } from './components/list-of-employees/list-of-employees.component';
@@ -7,7 +9,6 @@ import { DeleteConfirmationComponent } from './components/delete-confirmation/de
 import { AddOrUpdateEmployeeComponent } from './components/add-or-update-employee/add-or-update-employee.component';
 import { HomeComponent } from './components/home/home.component';
 import { MaterialModule } from './material.module';
-import { FormsModule } from '@angular/forms';
 import { SearchFilterPipe } from './pipes/search-filter/search-filter.pipe';
 
 @NgModule({
@@ -23,7 +24,8 @@ import { SearchFilterPipe } from './pipes/search-filter/search-filter.pipe';
   imports: [
     CommonModule,
     MaterialModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
   ],
   exports: [
     AddOrUpdateEmployeeComponent,

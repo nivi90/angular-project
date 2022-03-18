@@ -1,22 +1,27 @@
 <h2 mat-dialog-title>{{ isCreation ? 'Add Employee' : 'Update Employee'}}</h2>
-<mat-dialog-content class="mat-typography">
+<mat-dialog-content class="mat-typography" [formGroup]="employeeForm">
   <section>
     <mat-form-field class="example-full-width">
       <mat-label>Name</mat-label>
-      <input matInput placeholder="EX. sai" [(ngModel)]="name">
+      <input matInput placeholder="EX. sai" formControlName="name">
+      <div *ngIf="employeeForm.controls['name'].errors && !employeeForm.controls['name'].pristine" class="error-msg">
+        <div *ngIf="employeeForm.controls['name'].errors['required']">name is required.</div>
+        <div *ngIf="employeeForm.controls['name'].errors['minlength']">name should be minimum {{employeeForm.controls['name'].errors['minlength'].requiredLength}} characters</div>
+        <div *ngIf="employeeForm.controls['name'].errors['maxlength']">name shouldn't be greater than {{employeeForm.controls['name'].errors['maxlength'].requiredLength}} characters</div>
+      </div>
     </mat-form-field>
     <mat-form-field class="example-full-width">
       <mat-label>Age</mat-label>
-      <input  type="number" min="1" max="80" matInput placeholder="Ex. 20" [(ngModel)]="age">
+      <input  type="number" matInput placeholder="Ex. 20"  formControlName="age">
     </mat-form-field>
     <mat-form-field class="example-full-width">
       <mat-label>Salary</mat-label>
-      <input type="number" matInput min="1" placeholder="Ex. 20000" [(ngModel)]="salary">
+      <input type="number" matInput placeholder="Ex. 20000" formControlName="salary">
     </mat-form-field>
 
     <mat-form-field>
       <mat-label>Position</mat-label>
-      <mat-select [(ngModel)]="position">
+      <mat-select formControlName="position">
         <mat-option *ngFor="let position of positions" [value]="position">
           {{position}}
         </mat-option>
@@ -25,7 +30,7 @@
 
     <mat-form-field>
       <mat-label>Country</mat-label>
-      <mat-select [(ngModel)]="country">
+      <mat-select formControlName="country">
         <mat-option *ngFor="let country of countries" [value]="country">
           {{country}}
         </mat-option>
@@ -35,7 +40,11 @@
 </mat-dialog-content>
 <mat-dialog-actions align="end">
   <button mat-button mat-dialog-close>Cancel</button>
-  <button mat-raised-button color="primary" mat-dialog-close (click)="updateEmployee()">
+  <button mat-raised-button
+          color="primary"
+          mat-dialog-close
+          [disabled]="!employeeForm.valid"
+          (click)="updateEmployee()">
           {{isCreation ? 'Save' : 'Update'}}
   </button>
 </mat-dialog-actions>
